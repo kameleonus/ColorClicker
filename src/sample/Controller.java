@@ -19,4 +19,8 @@ public class Controller {
         a.setLayoutY(random.nextInt(550)+30);
         a.setLayoutX(random.nextInt(450)+30);
     }
+    public void misclic(){
+        wynik--;
+        points.setText(String.valueOf(wynik));
+    }
 }
