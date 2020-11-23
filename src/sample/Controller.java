@@ -20,7 +20,9 @@ public class Controller {
         a.setLayoutX(random.nextInt(450)+30);
     }
     public void misclic(){
+        if(wynik>0)
         wynik--;
+        else wynik=0;
         points.setText(String.valueOf(wynik));
     }
 }
