@@ -16,7 +16,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: lightgrey;">
+      <Pane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: lightgrey;">
          <children>
             
             <Button fx:id="a" layoutX="127.0" layoutY="100.0" mnemonicParsing="false" onAction="#score" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />

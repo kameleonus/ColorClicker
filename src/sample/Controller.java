@@ -16,7 +16,7 @@ public class Controller {
     public void score(){
         wynik++;
         points.setText(String.valueOf(wynik));
-        a.setLayoutY(random.nextInt(450)+20);
-        a.setLayoutX(random.nextInt(350)+20);
+        a.setLayoutY(random.nextInt(550)+30);
+        a.setLayoutX(random.nextInt(450)+30);
     }
 }
