@@ -73,9 +73,6 @@ public class Controller {
         live--;
         lives.setText("LIVES: "+live);
         if(live==0) {
-            PrintWriter printWriter;
-            printWriter = new PrintWriter("src/score.txt");
-            printWriter.println("\n"+wynik);
             System.exit(1);
         }
     }
