@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Random;
 
 public class Controller {
@@ -67,11 +69,13 @@ public class Controller {
                 cc="RED";
         }
     }
-    public void misclic(){
+    public void misclic() throws FileNotFoundException {
         live--;
         lives.setText("LIVES: "+live);
         if(live==0) {
-
+            PrintWriter printWriter;
+            printWriter = new PrintWriter("src/score.txt");
+            printWriter.println("\n"+wynik);
             System.exit(1);
         }
     }
