@@ -19,7 +19,7 @@
       <Pane onMouseClicked="#misclic" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: lightgrey;">
          <children>
             
-            <Button fx:id="a" layoutX="127.0" layoutY="100.0" mnemonicParsing="false" onAction="#score" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
+            <Button fx:id="a" layoutX="127.0" layoutY="100.0" mnemonicParsing="false" onAction="#score" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
 
             <Label layoutX="14.0" layoutY="14.0" text="Score: ">
                <font>
@@ -31,6 +31,8 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <Label fx:id="lookFor" layoutX="225.0" layoutY="16.0" prefHeight="17.0" prefWidth="50.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" textFill="RED" />
+            <Label fx:id="lives" layoutX="424.0" layoutY="16.0" prefHeight="17.0" prefWidth="64.0" text=" LIVES: 3" textFill="#6b2123" />
          </children>
       </Pane>
    </children>

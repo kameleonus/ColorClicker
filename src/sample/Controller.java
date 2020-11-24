@@ -13,7 +13,9 @@ public class Controller {
     Button a = new Button();
     @FXML
     public Label lookFor;
-
+    @FXML
+    public Label lives;
+    int live = 3;
     Random random = new Random();
     String cc="";
 
@@ -66,9 +68,11 @@ public class Controller {
         }
     }
     public void misclic(){
-        if(wynik>0)
-        wynik--;
-        else wynik=0;
-        points.setText(String.valueOf(wynik));
+        live--;
+        lives.setText("LIVES: "+live);
+        if(live==0) {
+
+            System.exit(1);
+        }
     }
 }
