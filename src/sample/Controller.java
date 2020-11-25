@@ -3,9 +3,8 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.Random;
 
 public class Controller {
@@ -17,6 +16,10 @@ public class Controller {
     public Label lookFor;
     @FXML
     public Label lives;
+    @FXML
+    public Label endMessage;
+    @FXML
+    public Pane tlo;
     int live = 3;
     Random random = new Random();
     String cc="";
@@ -26,7 +29,7 @@ public class Controller {
     public void score(){
         wynik++;
         points.setText(String.valueOf(wynik));
-        RandomColor(random.nextInt(10));
+        RandomColor(random.nextInt(12));
         a.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
         lookFor.setStyle("-fx-background-color: "+cc);
         a.setLayoutY(random.nextInt(550)+30);
@@ -65,15 +68,26 @@ public class Controller {
             case 9:
                 cc ="HONEYDEW";
                 break;
+            case 10:
+                cc ="AQUA";
+                break;
+            case 11:
+                cc ="BISQUE";
+                break;
             default:
                 cc="RED";
         }
     }
-    public void misclic() throws FileNotFoundException {
+    public void misclic() {
         live--;
         lives.setText("LIVES: "+live);
         if(live==0) {
-            System.exit(1);
+            message();
         }
+    }
+    public void message(){
+    endMessage.setVisible(true);
+    a.setDisable(true);
+    tlo.setDisable(true);
     }
 }
