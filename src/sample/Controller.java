@@ -32,7 +32,8 @@ public class Controller {
         RandomColor(random.nextInt(12));
         a.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
         lookFor.setStyle("-fx-background-color: "+cc);
-        createFalseButton(wynik);
+        if(wynik>5){
+        createFalseButton(wynik);}
         a.setLayoutY(random.nextInt(550)+30);
         a.setLayoutX(random.nextInt(450)+30);
     }
