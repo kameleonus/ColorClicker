@@ -29,7 +29,7 @@ public class Controller {
     public void score(){
         wynik++;
         points.setText(String.valueOf(wynik));
-        RandomColor(random.nextInt(12));
+        RandomColor(random.nextInt(15));
         a.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
         lookFor.setStyle("-fx-background-color: "+cc);
         if(wynik>5){
@@ -75,6 +75,15 @@ public class Controller {
                 break;
             case 11:
                 cc ="BISQUE";
+                break;
+            case 12:
+                cc ="AZURE";
+                break;
+            case 13:
+                cc ="CORAL";
+                break;
+            case 14:
+                cc ="FUCHSIA";
                 break;
             default:
                 cc="RED";
