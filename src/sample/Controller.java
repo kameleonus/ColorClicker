@@ -29,16 +29,7 @@ public class Controller {
     public int wynik;
     long meantime =System.currentTimeMillis();
 
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            czas+=System.currentTimeMillis()-meantime;
-            meantime=System.currentTimeMillis();
-        }
-    };
-Thread thread = new Thread(runnable);
     public void score(){
-        thread.start();
         wynik++;
         points.setText(String.valueOf(wynik));
         RandomColor(random.nextInt(15));
