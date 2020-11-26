@@ -6,15 +6,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Controller {
-    ExecutorService executor = Executors.newFixedThreadPool(2);
     @FXML
     public Label points;
     @FXML
     Button a = new Button();
+    @FXML
+    Button startButton = new Button();
     @FXML
     public Label lookFor;
     @FXML
@@ -24,13 +23,23 @@ public class Controller {
     @FXML
     public Pane tlo;
     @FXML
+    public Pane startPane;
+    @FXML
     public Label time;
     int live = 3;
     long czas;
     Random random = new Random();
     String cc="";
     public int wynik;
-    long meantime =System.currentTimeMillis();
+    long meantime;
+    public void start(){
+        startButton.setDisable(true);
+        startButton.setVisible(false);
+        startPane.setVisible(false);
+        startPane.setDisable(true);
+        tlo.setVisible(true);
+        meantime=System.currentTimeMillis();
+    }
 
     public void score(){
         czas+=System.currentTimeMillis()-meantime;
