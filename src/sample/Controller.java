@@ -20,13 +20,24 @@ public class Controller {
     public Label endMessage;
     @FXML
     public Pane tlo;
+    @FXML
+    public Label time;
     int live = 3;
+    long czas;
     Random random = new Random();
     String cc="";
-
     public int wynik;
+    long meantime =System.currentTimeMillis();
 
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
+Thread thread = new Thread(runnable);
     public void score(){
+        czas+=System.currentTimeMillis()-meantime;
         wynik++;
         points.setText(String.valueOf(wynik));
         RandomColor(random.nextInt(15));
@@ -36,6 +47,7 @@ public class Controller {
         createFalseButton(wynik);}
         a.setLayoutY(random.nextInt(550)+30);
         a.setLayoutX(random.nextInt(450)+30);
+        meantime=System.currentTimeMillis();
     }
 
     private void RandomColor(int pointerColor) {
@@ -101,6 +113,9 @@ public class Controller {
         endMessage.setDisable(false);
     endMessage.setVisible(true);
     a.setDisable(true);
+    time.setText("AVG time: "+czas/wynik+"\n score: "+wynik);
+    time.setVisible(true);
+
     }
     public void createFalseButton(int wynik) {
 
