@@ -6,8 +6,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Controller {
+    ExecutorService executor = Executors.newFixedThreadPool(2);
     @FXML
     public Label points;
     @FXML
@@ -30,6 +33,7 @@ public class Controller {
     long meantime =System.currentTimeMillis();
 
     public void score(){
+        czas+=System.currentTimeMillis()-meantime;
         wynik++;
         points.setText(String.valueOf(wynik));
         RandomColor(random.nextInt(15));
