@@ -45,7 +45,7 @@ public class Controller {
         message();
     };
     public void start(){
-
+        service.submit(fin);
         startButton.setDisable(true);
         startButton.setVisible(false);
         startPane.setVisible(false);
