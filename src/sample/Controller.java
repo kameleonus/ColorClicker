@@ -6,8 +6,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Controller {
+    ExecutorService service = Executors.newFixedThreadPool(2);
     @FXML
     public Label points;
     @FXML
@@ -32,7 +36,16 @@ public class Controller {
     String cc="";
     public int wynik;
     long meantime;
+    Runnable fin=()->{
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        message();
+    };
     public void start(){
+
         startButton.setDisable(true);
         startButton.setVisible(false);
         startPane.setVisible(false);
@@ -106,16 +119,10 @@ public class Controller {
                 cc="RED";
         }
     }
-    public void misclic() {
-        live--;
-        lives.setText("LIVES: "+live);
-        if(live==0) {
-            message();
-        }
-    }
+
     public void message(){
         tlo.setVisible(false);
-        endMessage.setDisable(false);
+    endMessage.setDisable(false);
     endMessage.setVisible(true);
     a.setDisable(true);
     time.setText("AVG time: "+czas/wynik+"\n score: "+wynik);
