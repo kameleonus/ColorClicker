@@ -36,6 +36,7 @@ public class Controller {
     String cc="";
     public int wynik;
     long meantime;
+    @FXML
     Runnable fin=()->{
         try {
             TimeUnit.SECONDS.sleep(10);

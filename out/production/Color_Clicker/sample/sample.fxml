@@ -26,7 +26,7 @@
             <Label fx:id="time" alignment="CENTER" layoutX="118.0" layoutY="350.0" prefHeight="61.0" prefWidth="272.0" visible="false" />
          </children>
       </Pane>
-      <Pane fx:id="tlo" onMouseClicked="#misclic" prefHeight="600.0" prefWidth="500.0" visible="false" style="-fx-background-color: lightgrey; ">
+      <Pane fx:id="tlo" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: lightgrey; " visible="false">
          <children>
             
             <Button fx:id="a" layoutX="127.0" layoutY="100.0" mnemonicParsing="false" onAction="#score" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
