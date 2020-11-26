@@ -14,6 +14,7 @@ public class Main extends Application {
         primaryStage.setTitle("Color_Clicker");
         primaryStage.setScene(new Scene(root, 500, 600));
         primaryStage.show();
+
     }
 
 
