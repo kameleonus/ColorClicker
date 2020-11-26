@@ -18,7 +18,7 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;">
          <children>
-            <Label fx:id="endMessage" alignment="CENTER" disable="true" layoutX="118.0" layoutY="180.0" prefHeight="168.0" prefWidth="272.0" text="OUT OF LIVES" visible="false">
+            <Label fx:id="endMessage" alignment="CENTER" disable="true" layoutX="118.0" layoutY="180.0" prefHeight="168.0" prefWidth="272.0" text="OUT OF TIME" visible="false">
                <font>
                   <Font size="24.0" />
                </font>

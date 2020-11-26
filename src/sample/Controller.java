@@ -6,12 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class Controller {
-    ExecutorService service = Executors.newFixedThreadPool(2);
     @FXML
     public Label points;
     @FXML
@@ -36,23 +32,17 @@ public class Controller {
     String cc="";
     public int wynik;
     long meantime;
-    @FXML
-    Runnable fin=()->{
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        message();
-    };
+    long startTime;
+
+
     public void start(){
-        service.submit(fin);
         startButton.setDisable(true);
         startButton.setVisible(false);
         startPane.setVisible(false);
         startPane.setDisable(true);
         tlo.setVisible(true);
         meantime=System.currentTimeMillis();
+        startTime=System.currentTimeMillis()/1000;
     }
 
     public void score(){
@@ -67,6 +57,9 @@ public class Controller {
         a.setLayoutY(random.nextInt(550)+30);
         a.setLayoutX(random.nextInt(450)+30);
         meantime=System.currentTimeMillis();
+        if((System.currentTimeMillis()/1000)-startTime>=10){
+            message();
+        }
     }
 
     private void RandomColor(int pointerColor) {
@@ -120,7 +113,7 @@ public class Controller {
                 cc="RED";
         }
     }
-
+@FXML
     public void message(){
         tlo.setVisible(false);
     endMessage.setDisable(false);
