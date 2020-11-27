@@ -18,7 +18,7 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;">
          <children>
-            <Label fx:id="endMessage" alignment="CENTER" disable="true" layoutX="118.0" layoutY="180.0" prefHeight="168.0" prefWidth="272.0" text="OUT OF LIVES" visible="false">
+            <Label fx:id="outOF" alignment="CENTER" disable="true" layoutX="118.0" layoutY="180.0" prefHeight="168.0" prefWidth="272.0" visible="false">
                <font>
                   <Font size="24.0" />
                </font>
@@ -26,12 +26,28 @@
             <Label fx:id="time" alignment="CENTER" layoutX="118.0" layoutY="350.0" prefHeight="61.0" prefWidth="272.0" visible="false" />
          </children>
       </Pane>
-      <Pane fx:id="tlo" onMouseClicked="#misclic" prefHeight="600.0" prefWidth="500.0" visible="false" style="-fx-background-color: lightgrey; ">
+      <Pane fx:id="Tpane" disable="true" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;" visible="false">
+         <children>
+            <Label fx:id="TlookFor" layoutX="225.0" layoutY="16.0" prefHeight="17.0" prefWidth="50.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" textFill="RED" />
+            <Label fx:id="Tpoints" layoutX="56.0" layoutY="14.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="14.0" text="Score: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="Ta" layoutX="188.0" layoutY="198.0" mnemonicParsing="false" onAction="#Timedscore" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane" disable="true" onMouseClicked="#misclic" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: lightgrey; " visible="false">
          <children>
             
-            <Button fx:id="a" layoutX="127.0" layoutY="100.0" mnemonicParsing="false" onAction="#score" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
+                  <Button fx:id="a" layoutX="127.0" layoutY="100.0" mnemonicParsing="false" onAction="#score" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
 
-            <Label layoutX="14.0" layoutY="14.0" text="Score: ">
+                  <Label layoutX="14.0" layoutY="14.0" text="Score: ">
                <font>
                   <Font size="14.0" />
                </font>
@@ -47,7 +63,8 @@
       </Pane>
       <Pane fx:id="startPane" prefHeight="600.0" prefWidth="500.0">
          <children>
-            <Button fx:id="startButton" layoutX="203.0" layoutY="283.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="73.0" text="Start" />
+            <Button fx:id="startButton" layoutX="160.0" layoutY="285.0" mnemonicParsing="false" onAction="#Standard" prefHeight="30.0" prefWidth="73.0" text="Standard" />
+            <Button fx:id="TimedStartButton" layoutX="270.0" layoutY="285.0" mnemonicParsing="false" onAction="#Timed" prefHeight="30.0" prefWidth="73.0" text="Timed" />
          </children>
       </Pane>
    </children>
