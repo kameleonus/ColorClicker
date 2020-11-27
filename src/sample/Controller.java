@@ -44,7 +44,7 @@ public class Controller {
         meantime=System.currentTimeMillis();
         startTime=System.currentTimeMillis()/1000;
     }
-
+// timed version
     public void score(){
         czas+=System.currentTimeMillis()-meantime;
         wynik++;
