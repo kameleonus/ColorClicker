@@ -90,6 +90,7 @@ public class Controller {
         startPane.setDisable(true);
         MultiPane.setVisible(true);
         MultiPane.setDisable(false);
+        meantime=System.currentTimeMillis();
     }
 
 //basic version
@@ -117,11 +118,12 @@ public class Controller {
             Ta.setLayoutX(random.nextInt(450)+30);
             meantime=System.currentTimeMillis();
             if((System.currentTimeMillis()/1000)-startTime>=10){
-                message("OUT OF TIME",1);
+                message("OUT OF TIME");
             }
         }
         //color find
     public void FindScore(){
+        czas+=System.currentTimeMillis()-meantime;
         wynik++;
         MPoints.setText(String.valueOf(wynik));
         for (int i = 0; i < 4; i++) {
@@ -137,6 +139,7 @@ public class Controller {
         MLookFor.setStyle("-fx-background-color: "+cc);
         Fa.setLayoutY(random.nextInt(550)+30);
         Fa.setLayoutX(random.nextInt(450)+30);
+        meantime=System.currentTimeMillis();
     }
 
     private Paint RandomColor(int pointerColor) {
@@ -195,18 +198,18 @@ public class Controller {
         live--;
         lives.setText("LIVES: "+live);
         if(live==0) {
-            message("OUT OF LIVES",1);
+            message("OUT OF LIVES");
         }
     }
     public void MCMisclic() {
         live--;
         MLives.setText("LIVES: "+live);
         if(live==0) {
-            message("OUT OF LIVES",2);
+            message("OUT OF LIVES");
         }
     }
 
-    public void message(String type,int version){
+    public void message(String type){
         pane.setVisible(false);
         pane.setDisable(true);
         TPane.setVisible(false);
@@ -218,13 +221,9 @@ public class Controller {
         outOF.setVisible(true);
         a.setDisable(true);
         Ta.setDisable(true);
-        if(version==1){
         time.setText("AVG time: "+czas/wynik+"\n Score: "+wynik);
-        time.setVisible(true);}
-        else if(version==2){
-            time.setText(" Score: "+wynik);
-            time.setVisible(true);
-        }
+        time.setVisible(true);
+
     }
 
 }
