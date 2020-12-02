@@ -110,7 +110,7 @@ public class Controller {
         public void Timedscore(){
             czas+=System.currentTimeMillis()-meantime;
             wynik++;
-            MPoints.setText(String.valueOf(wynik));
+            Tpoints.setText(String.valueOf(wynik));
             RandomColor(random.nextInt(15));
             Ta.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
             TLookFor.setStyle("-fx-background-color: "+cc);
