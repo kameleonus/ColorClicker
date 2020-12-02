@@ -11,6 +11,8 @@ public class Controller {
     @FXML
     public Label points;
     @FXML
+    public Label MPoints;
+    @FXML
     public Label outOF;
     @FXML
     public Label Tpoints;
@@ -19,19 +21,29 @@ public class Controller {
     @FXML
     Button Ta = new Button();
     @FXML
+    Button Fa = new Button();
+    @FXML
+    Button FindColor = new Button();
+    @FXML
     Button startButton = new Button();
     @FXML
     Button TimedStartButton = new Button();
     @FXML
     public Label lookFor;
     @FXML
-    public Label TlookFor;
+    public Label TLookFor;
+    @FXML
+    public Label MLookFor;
     @FXML
     public Label lives;
     @FXML
+    public Label MLives;
+    @FXML
     public Pane pane;
     @FXML
-    public Pane Tpane;
+    public Pane TPane;
+    @FXML
+    public Pane MultiPane;
     @FXML
     public Pane startPane;
     @FXML
@@ -61,10 +73,21 @@ public class Controller {
         TimedStartButton.setVisible(false);
         startPane.setVisible(false);
         startPane.setDisable(true);
-        Tpane.setVisible(true);
-        Tpane.setDisable(false);
+        TPane.setVisible(true);
+        TPane.setDisable(false);
         meantime=System.currentTimeMillis();
         startTime=System.currentTimeMillis()/1000;
+    }
+    //find color
+    public void MultiColor(){
+        startButton.setDisable(true);
+        startButton.setVisible(false);
+        TimedStartButton.setDisable(true);
+        TimedStartButton.setVisible(false);
+        startPane.setVisible(false);
+        startPane.setDisable(true);
+        TPane.setVisible(true);
+        TPane.setDisable(false);
     }
 
 //basic version
@@ -84,10 +107,10 @@ public class Controller {
         public void Timedscore(){
             czas+=System.currentTimeMillis()-meantime;
             wynik++;
-            Tpoints.setText(String.valueOf(wynik));
+            MPoints.setText(String.valueOf(wynik));
             RandomColor(random.nextInt(15));
             Ta.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
-            TlookFor.setStyle("-fx-background-color: "+cc);
+            TLookFor.setStyle("-fx-background-color: "+cc);
             Ta.setLayoutY(random.nextInt(550)+30);
             Ta.setLayoutX(random.nextInt(450)+30);
             meantime=System.currentTimeMillis();
@@ -95,6 +118,19 @@ public class Controller {
                 message("OUT OF TIME");
             }
         }
+        //color find
+    public void FindScore(){
+        wynik++;
+        points.setText(String.valueOf(wynik));
+        RandomColor(random.nextInt(15));
+        for (int i = 0; i < 10+wynik; i++) {
+
+        }
+        FindColor.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
+        MLookFor.setStyle("-fx-background-color: "+cc);
+        FindColor.setLayoutY(random.nextInt(550)+30);
+        FindColor.setLayoutX(random.nextInt(450)+30);
+    }
 
     private void RandomColor(int pointerColor) {
         switch (pointerColor) {
@@ -150,22 +186,24 @@ public class Controller {
     public void misclic() {
         live--;
         lives.setText("LIVES: "+live);
+        MLives.setText("LIVES: "+live);
         if(live==0) {
             message("OUT OF LIVES");
         }
     }
+
     public void message(String type){
         pane.setVisible(false);
         pane.setDisable(true);
-        Tpane.setVisible(false);
-        Tpane.setDisable(true);
+        TPane.setVisible(false);
+        TPane.setDisable(true);
         outOF.setText(type);
         outOF.setDisable(false);
-    outOF.setVisible(true);
-    a.setDisable(true);
-    Ta.setDisable(true);
-    time.setText("AVG time: "+czas/wynik+"\n score: "+wynik);
-    time.setVisible(true);
+        outOF.setVisible(true);
+        a.setDisable(true);
+        Ta.setDisable(true);
+        time.setText("AVG time: "+czas/wynik+"\n score: "+wynik);
+        time.setVisible(true);
 
     }
 

@@ -26,9 +26,9 @@
             <Label fx:id="time" alignment="CENTER" layoutX="118.0" layoutY="350.0" prefHeight="61.0" prefWidth="272.0" visible="false" />
          </children>
       </Pane>
-      <Pane fx:id="Tpane" disable="true" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;" visible="false">
+      <Pane fx:id="TPane" disable="true" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;" visible="false">
          <children>
-            <Label fx:id="TlookFor" layoutX="225.0" layoutY="16.0" prefHeight="17.0" prefWidth="50.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" textFill="RED" />
+            <Label fx:id="TLookFor" layoutX="225.0" layoutY="16.0" prefHeight="17.0" prefWidth="50.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" textFill="RED" />
             <Label fx:id="Tpoints" layoutX="56.0" layoutY="14.0">
                <font>
                   <Font size="14.0" />
@@ -61,10 +61,28 @@
             <Label fx:id="lives" layoutX="424.0" layoutY="16.0" prefHeight="17.0" prefWidth="64.0" text=" LIVES: 3" textFill="#6b2123" />
          </children>
       </Pane>
+      <Pane fx:id="MultiPane" disable="true" onMouseClicked="#misclic" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;" visible="false">
+         <children>
+            <Label fx:id="MLookFor" layoutX="225.0" layoutY="16.0" prefHeight="17.0" prefWidth="50.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" textFill="RED" />
+            <Label fx:id="MPoints" layoutX="56.0" layoutY="14.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="14.0" text="Score: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="Fa" layoutX="188.0" layoutY="198.0" mnemonicParsing="false" onAction="#FindScore" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
+            <Label fx:id="MLives" layoutX="430.0" prefHeight="17.0" prefWidth="64.0" text=" LIVES: 3" textFill="#6b2123" />
+         </children>
+      </Pane>
       <Pane fx:id="startPane" prefHeight="600.0" prefWidth="500.0">
          <children>
             <Button fx:id="startButton" layoutX="160.0" layoutY="285.0" mnemonicParsing="false" onAction="#Standard" prefHeight="30.0" prefWidth="73.0" text="Standard" />
             <Button fx:id="TimedStartButton" layoutX="270.0" layoutY="285.0" mnemonicParsing="false" onAction="#Timed" prefHeight="30.0" prefWidth="73.0" text="Timed" />
+            <Button fx:id="FindColor" layoutX="160.0" layoutY="337.0" mnemonicParsing="false" onAction="#MultiColor" prefHeight="30.0" prefWidth="88.0" text="Multi Color" />
          </children>
       </Pane>
    </children>
