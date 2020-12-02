@@ -61,7 +61,7 @@
             <Label fx:id="lives" layoutX="424.0" layoutY="16.0" prefHeight="17.0" prefWidth="64.0" text=" LIVES: 3" textFill="#6b2123" />
          </children>
       </Pane>
-      <Pane fx:id="MultiPane" disable="true" onMouseClicked="#misclic" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;" visible="false">
+      <Pane fx:id="MultiPane" disable="true" onMouseClicked="#MCMisclic" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: LIGHTGREY;" visible="false">
          <children>
             <Label fx:id="MLookFor" layoutX="225.0" layoutY="16.0" prefHeight="17.0" prefWidth="50.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" textFill="RED" />
             <Label fx:id="MPoints" layoutX="56.0" layoutY="14.0">
@@ -74,7 +74,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="FindColor" layoutX="188.0" layoutY="198.0" mnemonicParsing="false" onAction="#FindScore" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
+            <Button fx:id="Fa" layoutX="188.0" layoutY="198.0" mnemonicParsing="false" onAction="#FindScore" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-background-radius: 30px;" />
             <Label fx:id="MLives" layoutX="430.0" prefHeight="17.0" prefWidth="64.0" text=" LIVES: 3" textFill="#6b2123" />
          </children>
       </Pane>

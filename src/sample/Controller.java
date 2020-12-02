@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 
 import java.util.Random;
 
@@ -86,8 +88,8 @@ public class Controller {
         TimedStartButton.setVisible(false);
         startPane.setVisible(false);
         startPane.setDisable(true);
-        TPane.setVisible(true);
-        TPane.setDisable(false);
+        MultiPane.setVisible(true);
+        MultiPane.setDisable(false);
     }
 
 //basic version
@@ -115,24 +117,29 @@ public class Controller {
             Ta.setLayoutX(random.nextInt(450)+30);
             meantime=System.currentTimeMillis();
             if((System.currentTimeMillis()/1000)-startTime>=10){
-                message("OUT OF TIME");
+                message("OUT OF TIME",1);
             }
         }
         //color find
     public void FindScore(){
         wynik++;
-        points.setText(String.valueOf(wynik));
+        MPoints.setText(String.valueOf(wynik));
+        for (int i = 0; i < 4; i++) {
+            Circle circle = new Circle();
+            RandomColor(random.nextInt(15));
+            circle.setFill(Paint.valueOf(cc));
+            circle.setRadius(15);
+            circle.setCenterY(random.nextInt(550)+30);
+            circle.setCenterX(random.nextInt(450)+30);
+            MultiPane.getChildren().add(circle);}
         RandomColor(random.nextInt(15));
-        for (int i = 0; i < 10+wynik; i++) {
-
-        }
-        FindColor.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
+        Fa.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
         MLookFor.setStyle("-fx-background-color: "+cc);
-        FindColor.setLayoutY(random.nextInt(550)+30);
-        FindColor.setLayoutX(random.nextInt(450)+30);
+        Fa.setLayoutY(random.nextInt(550)+30);
+        Fa.setLayoutX(random.nextInt(450)+30);
     }
 
-    private void RandomColor(int pointerColor) {
+    private Paint RandomColor(int pointerColor) {
         switch (pointerColor) {
             case 0:
                 cc = "PURPLE";
@@ -182,29 +189,42 @@ public class Controller {
             default:
                 cc="RED";
         }
+        return null;
     }
     public void misclic() {
         live--;
         lives.setText("LIVES: "+live);
+        if(live==0) {
+            message("OUT OF LIVES",1);
+        }
+    }
+    public void MCMisclic() {
+        live--;
         MLives.setText("LIVES: "+live);
         if(live==0) {
-            message("OUT OF LIVES");
+            message("OUT OF LIVES",2);
         }
     }
 
-    public void message(String type){
+    public void message(String type,int version){
         pane.setVisible(false);
         pane.setDisable(true);
         TPane.setVisible(false);
         TPane.setDisable(true);
+        MultiPane.setDisable(true);
+        MultiPane.setVisible(false);
         outOF.setText(type);
         outOF.setDisable(false);
         outOF.setVisible(true);
         a.setDisable(true);
         Ta.setDisable(true);
-        time.setText("AVG time: "+czas/wynik+"\n score: "+wynik);
-        time.setVisible(true);
-
+        if(version==1){
+        time.setText("AVG time: "+czas/wynik+"\n Score: "+wynik);
+        time.setVisible(true);}
+        else if(version==2){
+            time.setText(" Score: "+wynik);
+            time.setVisible(true);
+        }
     }
 
 }
