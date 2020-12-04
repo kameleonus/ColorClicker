@@ -124,7 +124,6 @@ public class Controller {
         }
         //color find
     public void FindScore(){
-        MultiPane.setStyle("fx-background-color:LIGHTGREY");
         czas+=System.currentTimeMillis()-meantime;
         wynik++;
         MPoints.setText(String.valueOf(wynik));
@@ -135,14 +134,14 @@ public class Controller {
             circle.setRadius(15);
             circle.setCenterY(random.nextInt(550)+30);
             circle.setCenterX(random.nextInt(450)+30);
-            MultiPane.getChildren().add(circle);
-        newCircles++;}
+            MultiPane.getChildren().add(circle); }
         RandomColor(random.nextInt(15));
         Fa.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
         MLookFor.setStyle("-fx-background-color: "+cc);
         Fa.setLayoutY(random.nextInt(550)+30);
         Fa.setLayoutX(random.nextInt(450)+30);
         meantime=System.currentTimeMillis();
+        newCircles++;
     }
 
     private Paint RandomColor(int pointerColor) {
