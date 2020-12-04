@@ -51,6 +51,7 @@ public class Controller {
     @FXML
     public Label time;
     int live = 3;
+    int newCircles=2;
     long czas;
     Random random = new Random();
     String cc="";
@@ -123,17 +124,19 @@ public class Controller {
         }
         //color find
     public void FindScore(){
+        MultiPane.setStyle("fx-background-color:LIGHTGREY");
         czas+=System.currentTimeMillis()-meantime;
         wynik++;
         MPoints.setText(String.valueOf(wynik));
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < newCircles; i++) {
             Circle circle = new Circle();
             RandomColor(random.nextInt(15));
             circle.setFill(Paint.valueOf(cc));
             circle.setRadius(15);
             circle.setCenterY(random.nextInt(550)+30);
             circle.setCenterX(random.nextInt(450)+30);
-            MultiPane.getChildren().add(circle);}
+            MultiPane.getChildren().add(circle);
+        newCircles++;}
         RandomColor(random.nextInt(15));
         Fa.setStyle("-fx-background-color: "+cc+"; -fx-background-radius: 30px;");
         MLookFor.setStyle("-fx-background-color: "+cc);
